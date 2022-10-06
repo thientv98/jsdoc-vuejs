@@ -8,6 +8,7 @@ const vueDataTag = require('./lib/tags/vue-data');
 const vuePropTag = require('./lib/tags/vue-prop');
 const vueComputedTag = require('./lib/tags/vue-computed');
 const vueEventTag = require('./lib/tags/vue-event');
+const vueMethodTag = require('./lib/tags/vue-method');
 
 // Used to compute good line number for Vue methods
 const exportDefaultLines = {};
@@ -30,12 +31,17 @@ exports.handlers = {
     const fullPath = join(e.doclet.meta.path, e.doclet.meta.filename);
     const componentName = e.doclet.meta.filename.replace(/\.(vue|js)$/, '');
 
+    const name = e.doclet.meta.filename.split('.')[0];
+    const srcpath = __dirname.replace('node_modules\\jsdoc-vuejs', '');
+    const dir = e.doclet.meta.path.replace(srcpath, '');
+    const module = dir.replaceAll('\\', '-') + '-' + name
+
     // The main doclet before `export default {}`
     if (e.doclet.longname === 'module.exports') {
       e.doclet.kind = 'module';
       e.doclet.name = componentName;
       e.doclet.alias = componentName;
-      e.doclet.longname = `module:${componentName}`;
+      e.doclet.longname = `module:${module}`;
     }
 
     if (
@@ -75,7 +81,17 @@ exports.handlers = {
           e.doclet.meta.lineno += exportDefaultLines[fullPath] - mainDocletLines[fullPath];
         }
       } else {
-        e.doclet.memberof = null; // don't include Vue hooks
+        // e.doclet.memberof = null; // don't include Vue hooks
+        if (e.doclet.memberof === 'setup') {
+            e.doclet.meta.code.type = 'FunctionExpression';
+            e.doclet.scope = 'instance';
+
+            e.doclet.longname = `module:${module}.methods.${e.doclet.name}`
+            e.doclet.memberof = `module:${module}`
+            if (fileIsSingleFileComponent) {
+                e.doclet.meta.lineno += exportDefaultLines[fullPath] - mainDocletLines[fullPath];
+            }
+        }
       }
     }
   },
@@ -86,4 +102,5 @@ exports.defineTags = function defineTags(dictionary) {
   dictionary.defineTag(vuePropTag.name, vuePropTag.options);
   dictionary.defineTag(vueComputedTag.name, vueComputedTag.options);
   dictionary.defineTag(vueEventTag.name, vueEventTag.options);
+  dictionary.defineTag(vueMethodTag.name, vueMethodTag.options);
 };
