@@ -54,7 +54,7 @@ exports.handlers = {
     // It can be the main doclet before `export default {}`
     // with at least one `@vue-*` tag
     if (e.doclet._isVueDoc) {
-      const { template } = config['jsdoc-vuejs'];
+      const { template } = config['jsdoc-vue3js'];
       const data = {
         props: e.doclet._vueProps || [],
         data: e.doclet._vueData || [],
