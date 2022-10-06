@@ -32,7 +32,7 @@ exports.handlers = {
     const componentName = e.doclet.meta.filename.replace(/\.(vue|js)$/, '');
 
     const name = e.doclet.meta.filename.split('.')[0];
-    const srcpath = __dirname.replace('node_modules\\jsdoc-vuejs', '');
+    const srcpath = __dirname.replace('node_modules\\jsdoc-vue3js', '');
     const dir = e.doclet.meta.path.replace(srcpath, '');
     const module = dir.replaceAll('\\', '-') + '-' + name
 
@@ -54,7 +54,7 @@ exports.handlers = {
     // It can be the main doclet before `export default {}`
     // with at least one `@vue-*` tag
     if (e.doclet._isVueDoc) {
-      const { template } = config['jsdoc-vue3js'];
+      const { template } = config['jsdoc-vuejs'];
       const data = {
         props: e.doclet._vueProps || [],
         data: e.doclet._vueData || [],
