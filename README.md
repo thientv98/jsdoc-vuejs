@@ -1,15 +1,15 @@
 JSDoc for VueJS
 ===============
 
-[![npm version](https://badge.fury.io/js/jsdoc-vuejs.svg)](https://badge.fury.io/js/jsdoc-vuejs)
-[![Build Status (Travis)](https://travis-ci.org/Kocal/jsdoc-vuejs.svg?branch=master)](https://travis-ci.org/Kocal/jsdoc-vuejs)
-[![Build Status (AppVeyor)](https://ci.appveyor.com/api/projects/status/a36pui6w1qhqq582?svg=true)](https://ci.appveyor.com/project/Kocal/jsdoc-vuejs)
-[![codecov](https://codecov.io/gh/Kocal/jsdoc-vuejs/branch/master/graph/badge.svg)](https://codecov.io/gh/Kocal/jsdoc-vuejs)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/850b7601f2bf4e8787a6aadbafa8afef)](https://www.codacy.com/app/kocal/jsdoc-vuejs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Kocal/jsdoc-vuejs&amp;utm_campaign=Badge_Grade)
+[![npm version](https://badge.fury.io/js/jsdoc-vue3js.svg)](https://badge.fury.io/js/jsdoc-vue3js)
+[![Build Status (Travis)](https://travis-ci.org/Kocal/jsdoc-vue3js.svg?branch=master)](https://travis-ci.org/Kocal/jsdoc-vue3js)
+[![Build Status (AppVeyor)](https://ci.appveyor.com/api/projects/status/a36pui6w1qhqq582?svg=true)](https://ci.appveyor.com/project/Kocal/jsdoc-vue3js)
+[![codecov](https://codecov.io/gh/Kocal/jsdoc-vue3js/branch/master/graph/badge.svg)](https://codecov.io/gh/Kocal/jsdoc-vue3js)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/850b7601f2bf4e8787a6aadbafa8afef)](https://www.codacy.com/app/kocal/jsdoc-vue3js?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Kocal/jsdoc-vue3js&amp;utm_campaign=Badge_Grade)
 
 A JSDoc plugin for listing props, data, computed data, and methods from `.vue` files.
 
-:warning: This branch is for Vue 3. If you still use Vue 2, please see [`3.x` branch](https://github.com/Kocal/jsdoc-vuejs/tree/3.x).
+:warning: This branch is for Vue 3. If you still use Vue 2, please see [`3.x` branch](https://github.com/Kocal/jsdoc-vue3js/tree/3.x).
 
 ---
 
@@ -21,7 +21,7 @@ A JSDoc plugin for listing props, data, computed data, and methods from `.vue` f
 ## Installation
 
 ```bash
-$ npm install --save-dev jsdoc jsdoc-vuejs
+$ npm install --save-dev jsdoc jsdoc-vue3js
 ```
 
 You also need to install `@vue/compiler-sfc` that match your Vue version:
@@ -32,12 +32,12 @@ $ npm install --save-dev @vue/compiler-sfc
 
 ## Usage
 
-Your should update your JSDoc configuration to enable JSDoc-VueJS:
+Your should update your JSDoc configuration to enable jsdoc-vue3js:
 
 ```json
 {
   "plugins": [
-    "node_modules/jsdoc-vuejs"
+    "node_modules/jsdoc-vue3js"
   ],
   "source": {
     "includePattern": "\\.(vue|js)$"
@@ -150,8 +150,8 @@ Feel free to open an issue/pull request if your template is not supported!
 ### Install Dependencies
 
 ```bash
-$ git clone https://github.com/Kocal/jsdoc-vuejs
-$ cd jsdoc-vuejs
+$ git clone https://github.com/Kocal/jsdoc-vue3js
+$ cd jsdoc-vue3js
 $ yarn install
 
 # For testing the example docs
