@@ -39,8 +39,8 @@ exports.handlers = {
     // The main doclet before `export default {}`
     if (e.doclet.longname === 'module.exports') {
       e.doclet.kind = 'module';
-      e.doclet.name = componentName;
-      e.doclet.alias = componentName;
+      e.doclet.name = module;
+      e.doclet.alias = module;
       e.doclet.longname = `module:${module}`;
     }
 

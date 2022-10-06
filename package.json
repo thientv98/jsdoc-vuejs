@@ -1,6 +1,6 @@
 {
   "name": "jsdoc-vue3js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A JSDoc plugin for documenting vue 3 files.",
   "main": "index.js",
   "files": [
