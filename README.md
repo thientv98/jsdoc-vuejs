@@ -9,8 +9,6 @@ JSDoc for VueJS
 
 A JSDoc plugin for listing props, data, computed data, and methods from `.vue` files.
 
-:warning: This branch is for Vue 3. If you still use Vue 2, please see [`3.x` branch](https://github.com/Kocal/jsdoc-vue3js/tree/3.x).
-
 ---
 
 ## Requirements
